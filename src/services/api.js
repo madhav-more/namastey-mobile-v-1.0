@@ -1,7 +1,11 @@
 import axios from 'axios';
 import Constants from 'expo-constants';
+// live url- https://namastey-backend-v-1-0.vercel.app/
+// const BASE_URL ="http://10.60.61.48:5001/api/v1"
 
-const BASE_URL ="http://172.27.151.48:5001/api/v1"
+const BASE_URL ="https://namastey-backend-v-1-0.vercel.app/"
+
+
   // Constants.expoConfig?.extra?.apiUrl || 'http://172.27.151.48:5001/api/v1';
 
 const api = axios.create({

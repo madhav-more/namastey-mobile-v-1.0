@@ -9,32 +9,59 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": false,
-      "bundleIdentifier": "com.namastey.app"
+      "supportsTablet": true,
+      "bundleIdentifier": "com.worknai.namastey",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Namastey needs access to your camera to take profile photos and scan QR codes.",
+        "NSPhotoLibraryUsageDescription": "Namastey needs access to your photos to let you choose a profile picture.",
+        "NSPhotoLibraryAddUsageDescription": "Namastey needs access to save photos to your library."
+      }
     },
     "android": {
+      "package": "com.worknai.namastey",
+      "versionCode": 1,
+      "permissions": [
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "NOTIFICATIONS"
+      ],
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#FF6B35"
+        "backgroundColor": "#FFFFFF",
+        "foregroundImage": "./assets/images/adaptive-icon.png"
       },
-      "package": "com.namastey.app"
+      "edgeToEdgeEnabled": true
     },
     "web": {
-      "bundler": "metro"
+      "output": "static",
+      "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
-      "expo-font",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/splash-icon.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#FFFFFF"
+        }
+      ],
       "expo-secure-store",
+      "expo-font",
       [
         "expo-image-picker",
         {
-          "photosPermission": "Namastey needs access to your photos to update your profile picture."
+          "photosPermission": "The app accesses your photos to let you share them with your friends."
         }
-      ],
-      "@react-native-community/datetimepicker"
+      ]
     ],
+    "experiments": {
+      "typedRoutes": true
+    },
     "extra": {
-      "apiUrl": "http://172.27.151.48:5001/api/v1"
+      "eas": {
+        "projectId": "7488e578-8f8b-4971-88f2-898492066848"
+      }
     }
   }
 }
