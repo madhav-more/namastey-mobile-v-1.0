@@ -7,7 +7,7 @@
       "developmentClient": true,
       "distribution": "internal",
       "env": {
-        "EXPO_PUBLIC_API_URL": "http://localhost:5000/api/v1"
+        "EXPO_PUBLIC_API_URL": "https://namastey-backend-v-1-0.vercel.app/"
       }
     },
     "preview": {

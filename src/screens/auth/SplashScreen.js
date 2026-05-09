@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, ActivityIndicator, StyleSheet } from 'react-native';
+import { View, Text, ActivityIndicator, StyleSheet, Image } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 /**
@@ -8,15 +8,19 @@ import { LinearGradient } from 'expo-linear-gradient';
 const SplashScreen = () => {
   return (
     <LinearGradient
-      colors={['#FF6B35', '#E05520', '#8B1A00']}
+      colors={['#FFFFFF', '#F8FAFC']}
       style={styles.container}
     >
-      <Text style={styles.brand}>🙏</Text>
+      <Image 
+        source={require('../../../assets/images/logo.png')} 
+        style={styles.logo}
+        resizeMode="contain"
+      />
       <Text style={styles.title}>Namastey</Text>
       <Text style={styles.tagline}>Welcome like never before</Text>
       <ActivityIndicator
         size="small"
-        color="rgba(255,255,255,0.7)"
+        color="#FF6B35"
         style={styles.loader}
       />
     </LinearGradient>
@@ -29,16 +33,20 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  brand: { fontSize: 64, marginBottom: 12 },
+  logo: {
+    width: 150,
+    height: 150,
+    marginBottom: 24,
+  },
   title: {
     fontSize: 42,
     fontWeight: '800',
-    color: '#fff',
+    color: '#1E293B',
     letterSpacing: -1,
   },
   tagline: {
     fontSize: 16,
-    color: 'rgba(255,255,255,0.8)',
+    color: '#64748B',
     marginTop: 8,
     fontWeight: '400',
     letterSpacing: 1,
