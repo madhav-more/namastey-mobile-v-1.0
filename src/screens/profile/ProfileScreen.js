@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {
-  View, Text, ScrollView, TouchableOpacity, Alert, StyleSheet,
+  View, Text, ScrollView, TouchableOpacity, Alert, StyleSheet, Platform,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { StatusBar } from 'expo-status-bar';
@@ -51,7 +51,7 @@ const ProfileScreen = () => {
       return toast.error('Permission denied to access photos');
     }
     const result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ImagePicker.MediaTypeOptions.Images,
+      mediaTypes: ['images'],
       allowsEditing: true,
       aspect: [1, 1],
       quality: 0.8,
@@ -62,8 +62,8 @@ const ProfileScreen = () => {
     const formData = new FormData();
     formData.append('photo', {
       uri: asset.uri,
-      type: 'image/jpeg',
-      name: 'profile.jpg',
+      type: asset.mimeType || 'image/jpeg',
+      name: asset.fileName || 'profile.jpg',
     });
 
     setUploading(true);

@@ -1,6 +1,6 @@
 import axios from 'axios';
 import Constants from 'expo-constants';
-const BASE_URL = process.env.EXPO_PUBLIC_API_URL || "https://namastey-backend-v-1-0.vercel.app/";
+const BASE_URL = process.env.EXPO_PUBLIC_API_URL || "https://namastey-backend-v-1-0.vercel.app/api/v1/";
 
 const api = axios.create({
   baseURL: BASE_URL,

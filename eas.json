@@ -16,7 +16,7 @@
         "buildType": "apk"
       },
       "env": {
-        "EXPO_PUBLIC_API_URL": "https://namastey-backend.vercel.app/api/v1"
+        "EXPO_PUBLIC_API_URL": "https://namastey-backend-v-1-0.vercel.app/"
       }
     },
     "production": {
